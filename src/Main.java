@@ -1,6 +1,9 @@
-public class Main {
-    public static void main(String[] args) {
+import java.text.NumberFormat;
 
-        System.out.println("Hello world!");
+public class Main {
+    static int x;
+    public static void main(String[] args) {
+        String a = "25";
+        for (int i = 0; i < a.length(); i++);
     }
 }
