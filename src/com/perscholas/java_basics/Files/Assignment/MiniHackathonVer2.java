@@ -3,6 +3,7 @@ package com.perscholas.java_basics.Files.Assignment;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,6 +15,7 @@ public class MiniHackathonVer2 {
 
     public static void main(String[] args) throws IOException {
 
+
         findInformation();
 
     }
@@ -22,7 +24,9 @@ public class MiniHackathonVer2 {
         Scanner scanner = new Scanner(System.in);
         printChooseNumber();
         int x = scanner.nextInt();
-        while (x < 1 && x > 6) {
+        scanner.nextLine();
+        int y = getConstructorParameterCount(SalesReps.class);
+        while (x < 1 || x > y) { // parameters to look by
             System.out.println("Invalid input. Please try again.");
             printChooseNumber();
             x = Integer.valueOf(scanner.nextLine());
@@ -118,5 +122,20 @@ public class MiniHackathonVer2 {
         System.out.println("\n" + data.size() + " Companies found\n");
             scanner.close();
         return data;
+    }
+
+    /**
+     * Counts number of parameters in the constructor of a given class.
+     *
+     * @param clazz The class for which to count the number of constructor parameters.
+     * @return The number of constructor parameters.
+     */
+    public static int getConstructorParameterCount(Class<?> clazz) {
+        Constructor<?>[] constructors = clazz.getConstructors();
+        if (constructors.length > 0) {
+            return constructors[0].getParameterCount();
+        } else {
+            return 0;
+        }
     }
 }
