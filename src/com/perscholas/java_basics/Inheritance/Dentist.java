@@ -1,14 +1,14 @@
 package com.perscholas.java_basics.Inheritance;
 
-public class Surgeon extends Doctor {
+public class Dentist extends Doctor{
     private int salary;
 
-    public Surgeon() {
+    public Dentist() {
         // base salary for a start position
         salary = 40_000;
     }
 
-    public Surgeon (int salary) {
+    public Dentist(int salary) {
         this.salary = salary;
     }
 
@@ -19,9 +19,9 @@ public class Surgeon extends Doctor {
     public void setSalary(int salary) {
         this.salary = salary;
     }
-    void Surgeon_Details() {
-        System.out.println("Surgeon  Detail...");
-        System.out.println(Department = "Cardio");
-    }
 
+    void Dentist_Details() {
+        System.out.println("Dentist  Detail...");
+        System.out.println(Department = "Dental clinic");
+    }
 }
