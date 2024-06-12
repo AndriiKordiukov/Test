@@ -15,7 +15,6 @@ public class MiniHackathonVer2 {
 
     public static void main(String[] args) throws IOException {
 
-
         findInformation();
 
     }
@@ -23,8 +22,8 @@ public class MiniHackathonVer2 {
     private static void findInformation() throws IOException {
         Scanner scanner = new Scanner(System.in);
         printChooseNumber();
-        int x = scanner.nextInt();
-        scanner.nextLine();
+        int x = Integer.valueOf(scanner.nextLine());
+
         int y = getConstructorParameterCount(SalesReps.class);
         while (x < 1 || x > y) { // parameters to look by
             System.out.println("Invalid input. Please try again.");
@@ -43,9 +42,12 @@ public class MiniHackathonVer2 {
 
         System.out.println("\n Input '" + findBy + "' key to find related info:");
 
-        scanner.nextLine();
+
 
         String keyword = scanner.nextLine();
+        while (keyword.isEmpty()) {
+            keyword = scanner.nextLine();
+        }
 
         provideCompanyInfoBy(salesReps, company, keyword, x);
         scanner.close();

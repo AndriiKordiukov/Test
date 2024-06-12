@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Main {
@@ -14,5 +15,11 @@ public class Main {
         mapObj.put(6, null);
         System.out.println(mapObj);
 
+
+        ArrayList<String> myList = new ArrayList<>(1024);
+        myList.add("Per Scholas New Yok, NY");
+
+        myList.add("Per Scholas Atlanta GA");
+        System.out.println(myList);
     }
 }
